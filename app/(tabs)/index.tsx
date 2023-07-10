@@ -1,9 +1,20 @@
+import { useEffect } from 'react';
 import { StyleSheet } from 'react-native';
 
 import EditScreenInfo from '../../components/EditScreenInfo';
 import { Text, View } from '../../components/Themed';
 
 export default function TabOneScreen() {
+
+  useEffect(() => {
+    fetch('http://localhost:5000/book/1233').then(res =>
+      res.json()
+    ).then(data => {
+      console.log(data)
+      console.log(data)
+    });
+  }, [])
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Tab One</Text>
